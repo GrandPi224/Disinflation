@@ -52,6 +52,7 @@
       border-bottom: 1px solid var(--border);
       border-right: 1px solid var(--border);
       font-size: .95rem;
+      font-weight: 700;           /* <-- make all table text bold */
     }
     th:last-child,
     td:last-child {
@@ -76,15 +77,9 @@
       text-align: right;
       font-variant-numeric: tabular-nums;
     }
-    td.change {
-      font-weight: 700;
-    }
-    td.negative {
-      color: var(--green);
-    }
-    td.positive {
-      color: var(--red);
-    }
+    td.negative { color: var(--green); }
+    td.positive { color: var(--red); }
+
     th.sortable {
       cursor: pointer;
       position: relative;
@@ -167,31 +162,31 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Eggs</td><td class="change negative">-12.7</td><td>0.22</td></tr>
-        <tr><td>Propane, kerosene, and firewood</td><td class="change negative">-4.7</td><td>0.07</td></tr>
-        <tr><td>Frozen fruits and vegetables</td><td class="change negative">-3.0</td><td>0.07</td></tr>
-        <tr><td>Citrus fruits</td><td class="change negative">-2.8</td><td>0.06</td></tr>
-        <tr><td>Other fats & oils incl. peanut butter</td><td class="change negative">-2.8</td><td>0.13</td></tr>
-        <tr><td>Men’s shirts & sweaters</td><td class="change negative">-2.8</td><td>0.16</td></tr>
-        <tr><td>Airline fares</td><td class="change negative">-2.8</td><td>0.87</td></tr>
-        <tr><td>Fuel oil & other fuels</td><td class="change negative">-2.6</td><td>0.14</td></tr>
-        <tr><td>Dishes & flatware</td><td class="change negative">-2.6</td><td>0.04</td></tr>
-        <tr><td>Apparel svcs. ex-laundry</td><td class="change negative">-2.6</td><td>0.03</td></tr>
-        <tr><td>Breakfast cereal</td><td class="change negative">-2.5</td><td>0.15</td></tr>
-        <tr><td>Other pork roasts, steaks, ribs</td><td class="change negative">-2.5</td><td>0.09</td></tr>
-        <tr><td>Newspapers & magazines</td><td class="change negative">-2.3</td><td>0.06</td></tr>
-        <tr><td>Televisions</td><td class="change negative">-2.1</td><td>0.09</td></tr>
-        <tr><td>Jewelry</td><td class="change negative">-2.0</td><td>0.15</td></tr>
-        <tr><td>Jewelry & watches</td><td class="change negative">-1.9</td><td>0.09</td></tr>
-        <tr><td>Other video equipment</td><td class="change negative">-1.8</td><td>0.03</td></tr>
-        <tr><td>Public transportation</td><td class="change negative">-1.8</td><td>1.41</td></tr>
-        <tr><td>Other sweets</td><td class="change negative">-1.7</td><td>0.07</td></tr>
-        <tr><td>Meats, poultry, fish, eggs</td><td class="change negative">-1.6</td><td>1.67</td></tr>
-        <tr><td>Bacon & related</td><td class="change negative">-1.6</td><td>0.34</td></tr>
-        <tr><td>Pork chops</td><td class="change negative">-1.6</td><td>0.11</td></tr>
-        <tr><td>Processed fruits & veg.</td><td class="change negative">-1.6</td><td>0.26</td></tr>
-        <tr><td>Cereals & cereal products</td><td class="change negative">-1.5</td><td>0.40</td></tr>
-        <tr><td>Fats and oils</td><td class="change negative">-1.5</td><td>0.25</td></tr>
+        <tr><td>Eggs</td><td class="negative">-12.7</td><td>0.22</td></tr>
+        <tr><td>Propane, kerosene, and firewood</td><td class="negative">-4.7</td><td>0.07</td></tr>
+        <tr><td>Frozen fruits and vegetables</td><td class="negative">-3.0</td><td>0.07</td></tr>
+        <tr><td>Citrus fruits</td><td class="negative">-2.8</td><td>0.06</td></tr>
+        <tr><td>Other fats & oils incl. peanut butter</td><td class="negative">-2.8</td><td>0.13</td></tr>
+        <tr><td>Men’s shirts & sweaters</td><td class="negative">-2.8</td><td>0.16</td></tr>
+        <tr><td>Airline fares</td><td class="negative">-2.8</td><td>0.87</td></tr>
+        <tr><td>Fuel oil & other fuels</td><td class="negative">-2.6</td><td>0.14</td></tr>
+        <tr><td>Dishes & flatware</td><td class="negative">-2.6</td><td>0.04</td></tr>
+        <tr><td>Apparel svcs. ex-laundry</td><td class="negative">-2.6</td><td>0.03</td></tr>
+        <tr><td>Breakfast cereal</td><td class="negative">-2.5</td><td>0.15</td></tr>
+        <tr><td>Other pork roasts, steaks, ribs</td><td class="negative">-2.5</td><td>0.09</td></tr>
+        <tr><td>Newspapers & magazines</td><td class="negative">-2.3</td><td>0.06</td></tr>
+        <tr><td>Televisions</td><td class="negative">-2.1</td><td>0.09</td></tr>
+        <tr><td>Jewelry</td><td class="negative">-2.0</td><td>0.15</td></tr>
+        <tr><td>Jewelry & watches</td><td class="negative">-1.9</td><td>0.09</td></tr>
+        <tr><td>Other video equipment</td><td class="negative">-1.8</td><td>0.03</td></tr>
+        <tr><td>Public transportation</td><td class="negative">-1.8</td><td>1.41</td></tr>
+        <tr><td>Other sweets</td><td class="negative">-1.7</td><td>0.07</td></tr>
+        <tr><td>Meats, poultry, fish, eggs</td><td class="negative">-1.6</td><td>1.67</td></tr>
+        <tr><td>Bacon & related</td><td class="negative">-1.6</td><td>0.34</td></tr>
+        <tr><td>Pork chops</td><td class="negative">-1.6</td><td>0.11</td></tr>
+        <tr><td>Processed fruits & veg.</td><td class="negative">-1.6</td><td>0.26</td></tr>
+        <tr><td>Cereals & cereal products</td><td class="negative">-1.5</td><td>0.40</td></tr>
+        <tr><td>Fats and oils</td><td class="negative">-1.5</td><td>0.25</td></tr>
       </tbody>
     </table>
 
@@ -206,31 +201,31 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Food – vending/mobile</td><td class="change positive">1.2</td><td>0.06</td></tr>
-        <tr><td>Tools, hardware, supplies</td><td class="change positive">1.2</td><td>0.24</td></tr>
-        <tr><td>Women’s suits & separates</td><td class="change positive">1.2</td><td>0.37</td></tr>
-        <tr><td>Misc. personal goods</td><td class="change positive">1.2</td><td>0.06</td></tr>
-        <tr><td>Motor vehicle repair</td><td class="change positive">1.2</td><td>0.40</td></tr>
-        <tr><td>Major appliances</td><td class="change positive">1.3</td><td>0.15</td></tr>
-        <tr><td>Financial services</td><td class="change positive">1.3</td><td>0.25</td></tr>
-        <tr><td>Candy & chewing gum</td><td class="change positive">1.4</td><td>0.23</td></tr>
-        <tr><td>Energy services</td><td class="change positive">1.5</td><td>3.16</td></tr>
-        <tr><td>Furniture & bedding</td><td class="change positive">1.5</td><td>0.78</td></tr>
-        <tr><td>Vehicle accessories (ex-tires)</td><td class="change positive">1.5</td><td>0.06</td></tr>
-        <tr><td>Bread</td><td class="change positive">1.6</td><td>0.25</td></tr>
-        <tr><td>Bedroom furniture</td><td class="change positive">1.6</td><td>0.26</td></tr>
-        <tr><td>Uncooked beef & veal (other)</td><td class="change positive">1.7</td><td>0.06</td></tr>
-        <tr><td>Uncooked poultry incl. turkey</td><td class="change positive">1.8</td><td>0.07</td></tr>
-        <tr><td>Sports vehicles & bicycles</td><td class="change positive">1.8</td><td>0.23</td></tr>
-        <tr><td>Other beverage materials (tea)</td><td class="change positive">1.9</td><td>0.13</td></tr>
-        <tr><td>Beverage materials – coffee/tea</td><td class="change positive">2.0</td><td>0.30</td></tr>
-        <tr><td>Photo equipment & supplies</td><td class="change positive">2.2</td><td>0.04</td></tr>
-        <tr><td>Coffee</td><td class="change positive">2.4</td><td>0.24</td></tr>
-        <tr><td>Living-room/kitchen/dining furn.</td><td class="change positive">2.4</td><td>0.30</td></tr>
-        <tr><td>Software & accessories</td><td class="change positive">2.6</td><td>0.03</td></tr>
-        <tr><td>Utility</td><td class="change positive">3.7</td><td>0.77</td></tr>
-        <tr><td>Car & truck rental</td><td class="change positive">4.3</td><td>0.15</td></tr>
-        <tr><td>Audio equipment</td><td class="change positive">8.8</td><td>0.07</td></tr>
+        <tr><td>Food – vending/mobile</td><td class="positive">1.2</td><td>0.06</td></tr>
+        <tr><td>Tools, hardware, supplies</td><td class="positive">1.2</td><td>0.24</td></tr>
+        <tr><td>Women’s suits & separates</td><td class="positive">1.2</td><td>0.37</td></tr>
+        <tr><td>Misc. personal goods</td><td class="positive">1.2</td><td>0.06</td></tr>
+        <tr><td>Motor vehicle repair</td><td class="positive">1.2</td><td>0.40</td></tr>
+        <tr><td>Major appliances</td><td class="positive">1.3</td><td>0.15</td></tr>
+        <tr><td>Financial services</td><td class="positive">1.3</td><td>0.25</td></tr>
+        <tr><td>Candy & chewing gum</td><td class="positive">1.4</td><td>0.23</td></tr>
+        <tr><td>Energy services</td><td class="positive">1.5</td><td>3.16</td></tr>
+        <tr><td>Furniture & bedding</td><td class="positive">1.5</td><td>0.78</td></tr>
+        <tr><td>Vehicle accessories (ex-tires)</td><td class="positive">1.5</td><td>0.06</td></tr>
+        <tr><td>Bread</td><td class="positive">1.6</td><td>0.25</td></tr>
+        <tr><td>Bedroom furniture</td><td class="positive">1.6</td><td>0.26</td></tr>
+        <tr><td>Uncooked beef & veal (other)</td><td class="positive">1.7</td><td>0.06</td></tr>
+        <tr><td>Uncooked poultry incl. turkey</td><td class="positive">1.8</td><td>0.07</td></tr>
+        <tr><td>Sports vehicles & bicycles</td><td class="positive">1.8</td><td>0.23</td></tr>
+        <tr><td>Other beverage materials (tea)</td><td class="positive">1.9</td><td>0.13</td></tr>
+        <tr><td>Beverage materials – coffee/tea</td><td class="positive">2.0</td><td>0.30</td></tr>
+        <tr><td>Photo equipment & supplies</td><td class="positive">2.2</td><td>0.04</td></tr>
+        <tr><td>Coffee</td><td class="positive">2.4</td><td>0.24</td></tr>
+        <tr><td>Living-room/kitchen/dining furn.</td><td class="positive">2.4</td><td>0.30</td></tr>
+        <tr><td>Software & accessories</td><td class="positive">2.6</td><td>0.03</td></tr>
+        <tr><td>Utility</td><td class="positive">3.7</td><td>0.77</td></tr>
+        <tr><td>Car & truck rental</td><td class="positive">4.3</td><td>0.15</td></tr>
+        <tr><td>Audio equipment</td><td class="positive">8.8</td><td>0.07</td></tr>
       </tbody>
     </table>
   </div>
