@@ -1,3 +1,6 @@
+Below is the **complete** `index.html`, with **both** CPI tables (bolded via an `!important` override) **and** the full multiple‐choice quiz + sorting & grading scripts. Replace your existing file with this, push to GitHub, wait \~30 s, then hard‐refresh:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +33,6 @@
       gap: 40px;
       justify-content: center;
     }
-
     table {
       border-collapse: collapse;
       width: 480px;
@@ -52,7 +54,6 @@
       border-bottom: 1px solid var(--border);
       border-right: 1px solid var(--border);
       font-size: .95rem;
-      font-weight: 700;           /* <-- make all table text bold */
     }
     th:last-child,
     td:last-child {
@@ -79,7 +80,6 @@
     }
     td.negative { color: var(--green); }
     td.positive { color: var(--red); }
-
     th.sortable {
       cursor: pointer;
       position: relative;
@@ -143,6 +143,12 @@
       text-align: center;
       margin-top: 18px;
       font-size: 1.1rem;
+    }
+
+    /* FORCE ALL TABLE TEXT BOLD */
+    #disTable th, #disTable td,
+    #infTable th, #infTable td {
+      font-weight: 700 !important;
     }
   </style>
 </head>
@@ -277,22 +283,25 @@
   <script>
     // sortable columns
     document.querySelectorAll('th.sortable').forEach(th => {
-      th.addEventListener('click', () => sortTable(th));
+      th.addEventListener('click', () => {
+        const table = th.closest('table'),
+              tbody = table.tBodies[0],
+              idx = [...th.parentNode.children].indexOf(th),
+              isNum = idx > 0,
+              dir = th.classList.toggle('desc') ? -1 : 1;
+        [...tbody.rows]
+          .sort((a, b) => {
+            const A = isNum
+              ? parseFloat(a.cells[idx].innerText)
+              : a.cells[idx].innerText.toLowerCase();
+            const B = isNum
+              ? parseFloat(b.cells[idx].innerText)
+              : b.cells[idx].innerText.toLowerCase();
+            return (A > B ? 1 : -1) * dir;
+          })
+          .forEach(r => tbody.appendChild(r));
+      });
     });
-    function sortTable(th) {
-      const table = th.closest('table'),
-            tbody = table.tBodies[0],
-            idx = [...th.parentNode.children].indexOf(th),
-            isNum = idx > 0,
-            dir = th.classList.toggle('desc') ? -1 : 1;
-      [...tbody.rows]
-        .sort((a, b) => {
-          const A = isNum ? parseFloat(a.cells[idx].innerText) : a.cells[idx].innerText.toLowerCase();
-          const B = isNum ? parseFloat(b.cells[idx].innerText) : b.cells[idx].innerText.toLowerCase();
-          return (A > B ? 1 : -1) * dir;
-        })
-        .forEach(r => tbody.appendChild(r));
-    }
 
     // quiz logic
     document.getElementById('grade').addEventListener('click', () => {
@@ -307,7 +316,8 @@
           correct++;
         } else {
           q.classList.add('incorrect');
-          [...q.querySelectorAll('input')].forEach(i => {
+          // highlight correct option
+          q.querySelectorAll('input').forEach(i => {
             if (i.value === ans) i.parentNode.style.fontWeight = '700';
           });
         }
@@ -318,3 +328,4 @@
 
 </body>
 </html>
+```
