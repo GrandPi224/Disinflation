@@ -2,14 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CPI Dis- & Inflation Hot Sheet + Quiz</title>
+<title>CPI Hot Sheet + Quiz</title>
 <style>
   :root{
-    --blue:#004080;
-    --green:#147800;
-    --red:#aa0016;
-    --gray:#f2f7fb;
-    --gold:#ffefc2;
+    --blue:#004080;--green:#147800;--red:#aa0016;--gray:#f2f7fb;--gold:#ffefc2;
     --font:Arial,Helvetica,sans-serif;
   }
   body{margin:0;padding:20px;font-family:var(--font);background:var(--gray);}
@@ -17,25 +13,26 @@
   .tables{display:flex;flex-wrap:wrap;gap:40px;justify-content:center;}
   table{border-collapse:collapse;width:480px;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);}
   caption{font-weight:700;font-size:1.3rem;padding:10px;background:var(--blue);color:#fff;}
-  th,td{padding:8px 10px;border-bottom:1px solid #ddd}
-  th{background:var(--gold);text-align:left;font-size:.9rem}
+  th,td{padding:8px 10px;border-bottom:1px solid #ddd;font-size:.9rem}
+  th{background:var(--gold);text-align:left}
   td:nth-child(2),td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums;}
   tr:nth-child(even){background:var(--gray);}
-  /* color code % change */
   td.change{font-weight:700}
-  td.negative{color:var(--green);}  /* deflation items */
-  td.positive{color:var(--red);}    /* inflation items */
-  /* simple column sorting */
+  td.negative{color:var(--green);}
+  td.positive{color:var(--red);}
   th.sortable{cursor:pointer;position:relative;}
   th.sortable::after{content:"▲";font-size:0.6rem;position:absolute;right:8px;opacity:.4}
   th.sortable.desc::after{content:"▼";}
-  /* quiz styles */
-  #quiz{max-width:800px;margin:40px auto;background:#fff;border-radius:6px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.15);}
-  #quiz h2{margin-top:0;text-align:center}
-  .q{margin:15px 0;}
-  .q p{margin:0 0 6px;font-weight:600;}
-  button{display:block;margin:20px auto 0;padding:10px 25px;font-size:1rem;border:none;border-radius:4px;background:var(--blue);color:#fff;}
-  #result{font-weight:700;text-align:center;margin-top:15px;}
+  /* quiz */
+  #quiz{max-width:860px;margin:40px auto;background:#fff;border-radius:6px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+  #quiz h2{text-align:center;margin-top:0}
+  .q{margin:18px 0;}
+  .q p{margin:0 0 8px;font-weight:600;}
+  .q label{display:block;margin:3px 0;cursor:pointer;}
+  .q.correct{border-left:4px solid var(--green);padding-left:6px;}
+  .q.incorrect{border-left:4px solid var(--red);padding-left:6px;}
+  #grade{display:block;margin:25px auto 0;padding:10px 25px;font-size:1rem;border:none;border-radius:4px;background:var(--blue);color:#fff;}
+  #score{font-weight:700;text-align:center;margin-top:18px;font-size:1.1rem;}
 </style>
 </head>
 <body>
@@ -43,9 +40,9 @@
 <h1>CPI Movers – April 2025</h1>
 
 <div class="tables">
-  <!-- DISINFLATION -->
+  <!-- --------------- DISINFLATION TABLE --------------- -->
   <table id="disTable">
-    <caption>CPI Disinflation</caption>
+    <caption>Trump Disinflation</caption>
     <thead>
       <tr>
         <th class="sortable">Item</th>
@@ -82,9 +79,9 @@
     </tbody>
   </table>
 
-  <!-- INFLATION -->
+  <!-- --------------- INFLATION TABLE --------------- -->
   <table id="infTable">
-    <caption>CPI Inflationary</caption>
+    <caption>Trump Inflationary</caption>
     <thead>
       <tr>
         <th class="sortable">Item</th>
@@ -122,68 +119,92 @@
   </table>
 </div>
 
-<!-- QUIZ -->
+<!-- --------------- QUIZ --------------- -->
 <section id="quiz">
   <h2>Quick Quiz – Test Your CPI IQ</h2>
 
-  <div class="q" data-answer="Eggs">
-    <p>1️⃣ Which item recorded the steepest monthly price drop?</p>
-    <input type="text" placeholder="Your answer here">
-  </div>
+  <form id="quizForm">
+    <div class="q" data-answer="Eggs">
+      <p>1️⃣ Which item recorded the steepest monthly price drop?</p>
+      <label><input type="radio" name="q1" value="Eggs">A) Eggs</label>
+      <label><input type="radio" name="q1" value="Public transportation">B) Public transportation</label>
+      <label><input type="radio" name="q1" value="Airline fares">C) Airline fares</label>
+      <label><input type="radio" name="q1" value="Frozen fruits and vegetables">D) Frozen fruits & veg.</label>
+    </div>
 
-  <div class="q" data-answer="Audio equipment">
-    <p>2️⃣ Which category saw the biggest monthly increase?</p>
-    <input type="text" placeholder="Your answer here">
-  </div>
+    <div class="q" data-answer="Audio equipment">
+      <p>2️⃣ Which category saw the biggest monthly increase?</p>
+      <label><input type="radio" name="q2" value="Audio equipment">A) Audio equipment</label>
+      <label><input type="radio" name="q2" value="Coffee">B) Coffee</label>
+      <label><input type="radio" name="q2" value="Energy services">C) Energy services</label>
+      <label><input type="radio" name="q2" value="Candy and chewing gum">D) Candy & chewing gum</label>
+    </div>
 
-  <div class="q" data-answer="-12.7">
-    <p>3️⃣ What was the percentage change for eggs (use sign and one decimal)?</p>
-    <input type="text" placeholder="e.g., -3.2">
-  </div>
+    <div class="q" data-answer="-12.7">
+      <p>3️⃣ Eggs changed by ___ percent.</p>
+      <label><input type="radio" name="q3" value="-12.7">A) -12.7 %</label>
+      <label><input type="radio" name="q3" value="-8.8">B) -8.8 %</label>
+      <label><input type="radio" name="q3" value="-4.7">C) -4.7 %</label>
+      <label><input type="radio" name="q3" value="-2.8">D) -2.8 %</label>
+    </div>
 
-  <div class="q" data-answer="1.5">
-    <p>4️⃣ Furniture & bedding prices climbed by how many percent?</p>
-    <input type="text" placeholder="e.g., 1.2">
-  </div>
+    <div class="q" data-answer="1.5">
+      <p>4️⃣ Furniture & bedding prices climbed by ___ percent.</p>
+      <label><input type="radio" name="q4" value="0.8">A) 0.8 %</label>
+      <label><input type="radio" name="q4" value="1.5">B) 1.5 %</label>
+      <label><input type="radio" name="q4" value="2.4">C) 2.4 %</label>
+      <label><input type="radio" name="q4" value="3.7">D) 3.7 %</label>
+    </div>
 
-  <div class="q" data-answer="Vending">
-    <p>5️⃣ Complete this phrase: “Food from _______ machines and mobile vendors.”</p>
-    <input type="text" placeholder="Your answer here">
-  </div>
+    <div class="q" data-answer="Vending">
+      <p>5️⃣ Complete the phrase: “Food from ___ machines and mobile vendors.”</p>
+      <label><input type="radio" name="q5" value="ATM">A) ATM</label>
+      <label><input type="radio" name="q5" value="Coffee">B) Coffee</label>
+      <label><input type="radio" name="q5" value="Vending">C) Vending</label>
+      <label><input type="radio" name="q5" value="Slot">D) Slot</label>
+    </div>
 
-  <button id="submit">Grade Me</button>
-  <div id="result"></div>
+    <button type="button" id="grade">Grade Me</button>
+  </form>
+  <div id="score"></div>
 </section>
 
 <script>
-/* ---------- sortable columns ---------- */
+/* -------- sortable columns -------- */
 document.querySelectorAll('th.sortable').forEach(th=>{
-  th.addEventListener('click', ()=>sortTable(th));
+  th.addEventListener('click',()=>sortTable(th));
 });
 function sortTable(th){
-  const table=th.closest('table');
-  const tbody=table.tBodies[0];
-  const idx=[...th.parentNode.children].indexOf(th);
-  const isNum=idx>0;
-  const dir=th.classList.toggle('desc')? -1:1;
+  const table=th.closest('table'),tbody=table.tBodies[0];
+  const idx=[...th.parentNode.children].indexOf(th),num=idx>0;
+  const dir=th.classList.toggle('desc')?-1:1;
   [...tbody.rows]
     .sort((a,b)=>{
-      const A=isNum?parseFloat(a.cells[idx].textContent):a.cells[idx].textContent.toLowerCase();
-      const B=isNum?parseFloat(b.cells[idx].textContent):b.cells[idx].textContent.toLowerCase();
+      let A=num?parseFloat(a.cells[idx].innerText):a.cells[idx].innerText.toLowerCase();
+      let B=num?parseFloat(b.cells[idx].innerText):b.cells[idx].innerText.toLowerCase();
       return (A>B?1:-1)*dir;
     })
-    .forEach(tr=>tbody.appendChild(tr));
+    .forEach(r=>tbody.appendChild(r));
 }
-/* ---------- quiz logic ---------- */
-document.getElementById('submit').addEventListener('click',()=>{
+/* -------- quiz logic -------- */
+document.getElementById('grade').addEventListener('click',()=>{
   let correct=0;
   document.querySelectorAll('#quiz .q').forEach(q=>{
-    const user=q.querySelector('input').value.trim();
+    q.classList.remove('correct','incorrect');
     const answer=q.dataset.answer;
-    if(user.toLowerCase()==answer.toLowerCase()) correct++;
+    const chosen=q.querySelector('input:checked');
+    if(!chosen){return;}
+    if(chosen.value===answer){
+      q.classList.add('correct');correct++;
+    }else{
+      q.classList.add('incorrect');
+      // mark the right choice
+      [...q.querySelectorAll('input')].forEach(i=>{
+        if(i.value===answer){i.parentNode.style.fontWeight='700';}
+      });
+    }
   });
-  const out=`You scored ${correct} / 5`;
-  document.getElementById('result').textContent=out;
+  document.getElementById('score').textContent=`You scored ${correct} / 5`;
 });
 </script>
 
