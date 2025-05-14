@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trump Disinflation & Trump Inflation + Quiz</title>
+  <title>CPI Hot Sheet + Quiz</title>
   <style>
     :root {
       --blue: #003366;
@@ -51,9 +51,9 @@
       border-bottom: 1px solid var(--border);
       border-right: 1px solid var(--border);
       font-size: .95rem;
-      font-weight: 700 !important;
     }
-    th:last-child, td:last-child {
+    th:last-child,
+    td:last-child {
       border-right: none;
     }
     th {
@@ -70,7 +70,8 @@
     tbody tr:hover {
       background: #d0e4f7;
     }
-    td:nth-child(2), td:nth-child(3) {
+    td:nth-child(2),
+    td:nth-child(3) {
       text-align: right;
       font-variant-numeric: tabular-nums;
     }
@@ -81,15 +82,17 @@
       position: relative;
     }
     th.sortable::after {
-      content: "\25B4";
+      content: "▴";
       font-size: 0.6rem;
       position: absolute;
       right: 8px;
       opacity: .4;
     }
     th.sortable.desc::after {
-      content: "\25BE";
+      content: "▾";
     }
+
+    /* quiz styles */
     #quiz {
       max-width: 860px;
       margin: 40px auto;
@@ -138,32 +141,99 @@
       margin-top: 18px;
       font-size: 1.1rem;
     }
+
+    /* FORCE ALL TABLE TEXT BOLD */
+    #disTable th, #disTable td,
+    #infTable th, #infTable td {
+      font-weight: 700 !important;
+    }
   </style>
 </head>
 <body>
-  <h1>Trump Disinflation & Trump Inflation – April 2025</h1>
+
+  <h1>CPI Movers – April 2025</h1>
+
   <div class="tables">
+    <!-- DISINFLATION TABLE -->
     <table id="disTable">
-      <caption>Trump Disinflation</caption>
+      <caption>CPI Disinflation</caption>
       <thead>
-        <tr><th class="sortable">Item</th><th class="sortable">Chg Mo %</th><th class="sortable">Item Wgt</th></tr>
+        <tr>
+          <th class="sortable">Item</th>
+          <th class="sortable">Chg Mo %</th>
+          <th class="sortable">Item Wgt</th>
+        </tr>
       </thead>
       <tbody>
         <tr><td>Eggs</td><td class="negative">-12.7</td><td>0.22</td></tr>
-        <!-- Add remaining Trump Disinflation rows here -->
+        <tr><td>Propane, kerosene, and firewood</td><td class="negative">-4.7</td><td>0.07</td></tr>
+        <tr><td>Frozen fruits and vegetables</td><td class="negative">-3.0</td><td>0.07</td></tr>
+        <tr><td>Citrus fruits</td><td class="negative">-2.8</td><td>0.06</td></tr>
+        <tr><td>Other fats & oils incl. peanut butter</td><td class="negative">-2.8</td><td>0.13</td></tr>
+        <tr><td>Men’s shirts & sweaters</td><td class="negative">-2.8</td><td>0.16</td></tr>
+        <tr><td>Airline fares</td><td class="negative">-2.8</td><td>0.87</td></tr>
+        <tr><td>Fuel oil & other fuels</td><td class="negative">-2.6</td><td>0.14</td></tr>
+        <tr><td>Dishes & flatware</td><td class="negative">-2.6</td><td>0.04</td></tr>
+        <tr><td>Apparel svcs. ex-laundry</td><td class="negative">-2.6</td><td>0.03</td></tr>
+        <tr><td>Breakfast cereal</td><td class="negative">-2.5</td><td>0.15</td></tr>
+        <tr><td>Other pork roasts, steaks, ribs</td><td class="negative">-2.5</td><td>0.09</td></tr>
+        <tr><td>Newspapers & magazines</td><td class="negative">-2.3</td><td>0.06</td></tr>
+        <tr><td>Televisions</td><td class="negative">-2.1</td><td>0.09</td></tr>
+        <tr><td>Jewelry</td><td class="negative">-2.0</td><td>0.15</td></tr>
+        <tr><td>Jewelry & watches</td><td class="negative">-1.9</td><td>0.09</td></tr>
+        <tr><td>Other video equipment</td><td class="negative">-1.8</td><td>0.03</td></tr>
+        <tr><td>Public transportation</td><td class="negative">-1.8</td><td>1.41</td></tr>
+        <tr><td>Other sweets</td><td class="negative">-1.7</td><td>0.07</td></tr>
+        <tr><td>Meats, poultry, fish, eggs</td><td class="negative">-1.6</td><td>1.67</td></tr>
+        <tr><td>Bacon & related</td><td class="negative">-1.6</td><td>0.34</td></tr>
+        <tr><td>Pork chops</td><td class="negative">-1.6</td><td>0.11</td></tr>
+        <tr><td>Processed fruits & veg.</td><td class="negative">-1.6</td><td>0.26</td></tr>
+        <tr><td>Cereals & cereal products</td><td class="negative">-1.5</td><td>0.40</td></tr>
+        <tr><td>Fats and oils</td><td class="negative">-1.5</td><td>0.25</td></tr>
       </tbody>
     </table>
+
+    <!-- INFLATION TABLE -->
     <table id="infTable">
-      <caption>Trump Inflation</caption>
+      <caption>CPI Inflationary</caption>
       <thead>
-        <tr><th class="sortable">Item</th><th class="sortable">Chg Mo %</th><th class="sortable">Item Wgt</th></tr>
+        <tr>
+          <th class="sortable">Item</th>
+          <th class="sortable">Chg Mo %</th>
+          <th class="sortable">Item Wgt</th>
+        </tr>
       </thead>
       <tbody>
         <tr><td>Food – vending/mobile</td><td class="positive">1.2</td><td>0.06</td></tr>
-        <!-- Add remaining Trump Inflation rows here -->
+        <tr><td>Tools, hardware, supplies</td><td class="positive">1.2</td><td>0.24</td></tr>
+        <tr><td>Women’s suits & separates</td><td class="positive">1.2</td><td>0.37</td></tr>
+        <tr><td>Misc. personal goods</td><td class="positive">1.2</td><td>0.06</td></tr>
+        <tr><td>Motor vehicle repair</td><td class="positive">1.2</td><td>0.40</td></tr>
+        <tr><td>Major appliances</td><td class="positive">1.3</td><td>0.15</td></tr>
+        <tr><td>Financial services</td><td class="positive">1.3</td><td>0.25</td></tr>
+        <tr><td>Candy & chewing gum</td><td class="positive">1.4</td><td>0.23</td></tr>
+        <tr><td>Energy services</td><td class="positive">1.5</td><td>3.16</td></tr>
+        <tr><td>Furniture & bedding</td><td class="positive">1.5</td><td>0.78</td></tr>
+        <tr><td>Vehicle accessories (ex-tires)</td><td class="positive">1.5</td><td>0.06</td></tr>
+        <tr><td>Bread</td><td class="positive">1.6</td><td>0.25</td></tr>
+        <tr><td>Bedroom furniture</td><td class="positive">1.6</td><td>0.26</td></tr>
+        <tr><td>Uncooked beef & veal (other)</td><td class="positive">1.7</td><td>0.06</td></tr>
+        <tr><td>Uncooked poultry incl. turkey</td><td class="positive">1.8</td><td>0.07</td></tr>
+        <tr><td>Sports vehicles & bicycles</td><td class="positive">1.8</td><td>0.23</td></tr>
+        <tr><td>Other beverage materials (tea)</td><td class="positive">1.9</td><td>0.13</td></tr>
+        <tr><td>Beverage materials – coffee/tea</td><td class="positive">2.0</td><td>0.30</td></tr>
+        <tr><td>Photo equipment & supplies</td><td class="positive">2.2</td><td>0.04</td></tr>
+        <tr><td>Coffee</td><td class="positive">2.4</td><td>0.24</td></tr>
+        <tr><td>Living-room/kitchen/dining furn.</td><td class="positive">2.4</td><td>0.30</td></tr>
+        <tr><td>Software & accessories</td><td class="positive">2.6</td><td>0.03</td></tr>
+        <tr><td>Utility</td><td class="positive">3.7</td><td>0.77</td></tr>
+        <tr><td>Car & truck rental</td><td class="positive">4.3</td><td>0.15</td></tr>
+        <tr><td>Audio equipment</td><td class="positive">8.8</td><td>0.07</td></tr>
       </tbody>
     </table>
   </div>
+
+  <!-- QUIZ -->
   <section id="quiz">
     <h2>Quick Quiz – Test Your CPI IQ</h2>
     <form id="quizForm">
@@ -174,12 +244,41 @@
         <label><input type="radio" name="q1" value="Airline fares">C) Airline fares</label>
         <label><input type="radio" name="q1" value="Frozen fruits and vegetables">D) Frozen fruits & veg.</label>
       </div>
-      <!-- Add questions 2–5 here following same format -->
+      <div class="q" data-answer="Audio equipment">
+        <p>2️⃣ Which category saw the biggest monthly increase?</p>
+        <label><input type="radio" name="q2" value="Audio equipment">A) Audio equipment</label>
+        <label><input type="radio" name="q2" value="Coffee">B) Coffee</label>
+        <label><input type="radio" name="q2" value="Energy services">C) Energy services</label>
+        <label><input type="radio" name="q2" value="Candy & chewing gum">D) Candy & chewing gum</label>
+      </div>
+      <div class="q" data-answer="-12.7">
+        <p>3️⃣ Eggs changed by ___ percent.</p>
+        <label><input type="radio" name="q3" value="-12.7">A) -12.7 %</label>
+        <label><input type="radio" name="q3" value="-8.8">B) -8.8 %</label>
+        <label><input type="radio" name="q3" value="-4.7">C) -4.7 %</label>
+        <label><input type="radio" name="q3" value="-2.8">D) -2.8 %</label>
+      </div>
+      <div class="q" data-answer="1.5">
+        <p>4️⃣ Furniture & bedding prices climbed by ___ percent.</p>
+        <label><input type="radio" name="q4" value="0.8">A) 0.8 %</label>
+        <label><input type="radio" name="q4" value="1.5">B) 1.5 %</label>
+        <label><input type="radio" name="q4" value="2.4">C) 2.4 %</label>
+        <label><input type="radio" name="q4" value="3.7">D) 3.7 %</label>
+      </div>  
+      <div class="q" data-answer="Vending">
+        <p>5️⃣ Complete the phrase: “Food from ___ machines and mobile vendors.”</p>
+        <label><input type="radio" name="q5" value="ATM">A) ATM</label>
+        <label><input type="radio" name="q5" value="Coffee">B) Coffee</label>
+        <label><input type="radio" name="q5" value="Vending">C) Vending</label>
+        <label><input type="radio" name="q5" value="Slot">D) Slot</label>
+      </div>
       <button type="button" id="grade">Grade Me</button>
     </form>
     <div id="score"></div>
   </section>
+
   <script>
+    // sortable columns
     document.querySelectorAll('th.sortable').forEach(th => {
       th.addEventListener('click', () => {
         const table = th.closest('table'),
@@ -187,13 +286,21 @@
               idx = [...th.parentNode.children].indexOf(th),
               isNum = idx > 0,
               dir = th.classList.toggle('desc') ? -1 : 1;
-        [...tbody.rows].sort((a, b) => {
-          const A = isNum ? parseFloat(a.cells[idx].innerText) : a.cells[idx].innerText.toLowerCase();
-          const B = isNum ? parseFloat(b.cells[idx].innerText) : b.cells[idx].innerText.toLowerCase();
-          return (A > B ? 1 : -1) * dir;
-        }).forEach(r => tbody.appendChild(r));
+        [...tbody.rows]
+          .sort((a, b) => {
+            const A = isNum
+              ? parseFloat(a.cells[idx].innerText)
+              : a.cells[idx].innerText.toLowerCase();
+            const B = isNum
+              ? parseFloat(b.cells[idx].innerText)
+              : b.cells[idx].innerText.toLowerCase();
+            return (A > B ? 1 : -1) * dir;
+          })
+          .forEach(r => tbody.appendChild(r));
       });
     });
+
+    // quiz logic
     document.getElementById('grade').addEventListener('click', () => {
       let correct = 0;
       document.querySelectorAll('#quiz .q').forEach(q => {
@@ -206,6 +313,7 @@
           correct++;
         } else {
           q.classList.add('incorrect');
+          // highlight correct option
           q.querySelectorAll('input').forEach(i => {
             if (i.value === ans) i.parentNode.style.fontWeight = '700';
           });
@@ -214,5 +322,6 @@
       document.getElementById('score').innerText = `You scored ${correct} / 5`;
     });
   </script>
+
 </body>
 </html>
